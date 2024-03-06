@@ -99,7 +99,7 @@ int main() {
       unsigned short ip_header_length = ip_header->ihl * 4;
 
       // If the packet is not fully recieved continue
-      if(index < ntohs(ip_header->tot_len))
+      if(index < (unsigned short)ntohs(ip_header->tot_len))
          continue; 
 
       // Reset index so that the next packet can processed properly
